@@ -1,0 +1,152 @@
+{
+  "form_id": "acord-25-coi",
+  "official_title": "ACORD 25: Certificate of Liability Insurance (COI) — AMS Holder Roster Schema",
+  "issuer": "ACORD Corporation (bring your agency's own licensed ACORD 25 PDF)",
+  "pdf_architecture": {
+    "verdict": "varies_by_ams_export",
+    "pages": 1,
+    "notes": "AMS exports (Applied Epic, AMS360, HawkSoft, EZLynx) may emit either fillable AcroForm PDFs or flattened PDFs; field names vary by ACORD edition and AMS vendor."
+  },
+  "columns": [
+    {
+      "header": "certificate_date",
+      "type": "date",
+      "required": true,
+      "pdf_field_example": "Top-right DATE (MM/DD/YYYY)",
+      "format_notes": "Issue date in MM/DD/YYYY; commonly fixed across a renewal COI batch."
+    },
+    {
+      "header": "producer_name",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "PRODUCER block (Line 1)",
+      "format_notes": "Issuing insurance agency or brokerage legal name."
+    },
+    {
+      "header": "producer_address",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "PRODUCER block (Address lines)",
+      "format_notes": "Agency mailing address; often locked on reusable template."
+    },
+    {
+      "header": "producer_phone",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "PHONE (A/C, No, Ext)",
+      "format_notes": "Agency contact phone (fictional 555-01xx in examples)."
+    },
+    {
+      "header": "producer_email",
+      "type": "email",
+      "required": true,
+      "pdf_field_example": "E-MAIL ADDRESS",
+      "format_notes": "Agency certificate desk email address."
+    },
+    {
+      "header": "insured_name",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "INSURED block (Named Insured)",
+      "format_notes": "Must match Named Insured exactly as written on underlying policies."
+    },
+    {
+      "header": "insured_address",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "INSURED block (Address)",
+      "format_notes": "Insured mailing street, city, state, and ZIP."
+    },
+    {
+      "header": "insurer_a_name",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "INSURER A (Insurers Affording Coverage)",
+      "format_notes": "Carrier legal name affording Commercial General Liability coverage."
+    },
+    {
+      "header": "insurer_a_naic",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "NAIC # (Insurer A)",
+      "format_notes": "5-digit NAIC company code; keep as Text to preserve leading zeros."
+    },
+    {
+      "header": "gl_policy_number",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "COVERAGES: Commercial General Liability POLICY NUMBER",
+      "format_notes": "Underlying CGL policy number (update once per annual renewal)."
+    },
+    {
+      "header": "gl_effective_date",
+      "type": "date",
+      "required": true,
+      "pdf_field_example": "POLICY EFF (MM/DD/YYYY)",
+      "format_notes": "CGL policy effective date."
+    },
+    {
+      "header": "gl_expiration_date",
+      "type": "date",
+      "required": true,
+      "pdf_field_example": "POLICY EXP (MM/DD/YYYY)",
+      "format_notes": "CGL policy expiration date."
+    },
+    {
+      "header": "each_occurrence_limit",
+      "type": "currency",
+      "required": true,
+      "pdf_field_example": "LIMITS: EACH OCCURRENCE",
+      "format_notes": "Formatted dollar limit (e.g., $1,000,000); watch narrow box truncation."
+    },
+    {
+      "header": "general_aggregate_limit",
+      "type": "currency",
+      "required": true,
+      "pdf_field_example": "LIMITS: GENERAL AGGREGATE",
+      "format_notes": "Formatted dollar limit (e.g., $2,000,000)."
+    },
+    {
+      "header": "additional_insured_flag",
+      "type": "enum",
+      "required": false,
+      "pdf_field_example": "ADDL INSD column (CGL row)",
+      "format_notes": "Y or N indicator placed in narrow ADDL INSD box."
+    },
+    {
+      "header": "waiver_of_subrogation_flag",
+      "type": "enum",
+      "required": false,
+      "pdf_field_example": "SUBR WVD column (CGL row)",
+      "format_notes": "Y or N indicator placed in narrow SUBR WVD box."
+    },
+    {
+      "header": "description_of_operations",
+      "type": "string",
+      "required": false,
+      "pdf_field_example": "DESCRIPTION OF OPERATIONS / LOCATIONS / VEHICLES",
+      "format_notes": "Multiline project/job/endorsement wording that varies per holder row."
+    },
+    {
+      "header": "certificate_holder_name",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "CERTIFICATE HOLDER block (Line 1)",
+      "format_notes": "Landlord, GC, lender, or client requesting evidence of coverage."
+    },
+    {
+      "header": "certificate_holder_address",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "CERTIFICATE HOLDER block (Line 2)",
+      "format_notes": "Certificate holder street address and suite."
+    },
+    {
+      "header": "certificate_holder_city_state_zip",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "CERTIFICATE HOLDER block (Line 3)",
+      "format_notes": "Certificate holder city, state, and ZIP (preserve leading-zero ZIPs)."
+    }
+  ]
+}

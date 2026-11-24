@@ -1,0 +1,6 @@
+Employee_First_Name,Employee_Middle_Initial,Employee_Last_Name,Employee_SSN,Street_Address,City,State,ZIP,Employer_Name,Employer_EIN,Employer_Contact_Phone,Employer_Street_Address,Employer_City_State_ZIP,Plan_Start_Month,Line14_All_12_Months,Line15_All_12_Months,Line16_All_12_Months
+Jane,M,Doe,000-00-0001,"742 Industrial Pkwy, Apt 4B",Columbus,OH,43215,Northstar Manufacturing LLC,12-3456789,(614) 555-0190,1000 Commerce Way,"Columbus, OH 43215",01,1E,142.50,2C
+John,T,Smith,000-00-0002,"1890 High St, Unit 12",Boston,MA,02110,Northstar Manufacturing LLC,12-3456789,(614) 555-0190,1000 Commerce Way,"Columbus, OH 43215",01,1A,0.00,2G
+Priya,K,Patel,000-00-0003,415 Olentangy River Rd,Dublin,OH,43017,Northstar Manufacturing LLC,12-3456789,(614) 555-0190,1000 Commerce Way,"Columbus, OH 43215",01,1E,142.50,2C
+David,R,Morales,000-00-0004,920 E Broad St,Westerville,OH,43081,Northstar Manufacturing LLC,12-3456789,(614) 555-0190,1000 Commerce Way,"Columbus, OH 43215",01,1E,142.50,2H
+Hannah,L,Brooks,000-00-0005,260 Arlington Ave,Newark,NJ,07102,Northstar Manufacturing LLC,12-3456789,(614) 555-0190,1000 Commerce Way,"Columbus, OH 43215",01,1B,142.50,2C

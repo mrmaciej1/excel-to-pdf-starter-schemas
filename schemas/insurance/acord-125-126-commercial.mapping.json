@@ -1,0 +1,138 @@
+{
+  "form_id": "acord-125-126-commercial",
+  "official_title": "ACORD 125 (Commercial Insurance Application) & ACORD 126 (CGL Section) + SOV Property Schedule",
+  "issuer": "ACORD Corporation (bring your agency's own licensed ACORD 125/126/140 PDFs)",
+  "pdf_architecture": {
+    "verdict": "varies_by_ams_export",
+    "pages": 8,
+    "notes": "ACORD 125 (4 pages) and ACORD 126 (4 pages) carry 150-300+ dense boxes, checkboxes, and location/hazard tables. Synchronized column headers let one AMS/SOV CSV populate 125, 126, and 140 together."
+  },
+  "columns": [
+    {
+      "header": "Named_Insured",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "ACORD 125/126/140 Header: NAMED INSURED",
+      "format_notes": "Shared across ACORD 125, 126, and 140 headers so multi-PDF packets stay synchronized."
+    },
+    {
+      "header": "DBA_Name",
+      "type": "string",
+      "required": false,
+      "pdf_field_example": "ACORD 125 Applicant Info: DBA / Trade Name",
+      "format_notes": "Optional operating/trade name."
+    },
+    {
+      "header": "FEIN",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "ACORD 125 Applicant Info: FEIN OR SOC SEC #",
+      "format_notes": "Formatted XX-XXXXXXX; keep as Text to preserve hyphens and leading zeros."
+    },
+    {
+      "header": "NAICS_Code",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "ACORD 125 Applicant Info: NAICS",
+      "format_notes": "6-digit NAICS industry classification code."
+    },
+    {
+      "header": "Policy_Number",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "ACORD 125/126/140 Header: POLICY NUMBER",
+      "format_notes": "Current or renewal policy number (or 'TBD' for new business submissions)."
+    },
+    {
+      "header": "Effective_Date",
+      "type": "date",
+      "required": true,
+      "pdf_field_example": "ACORD 125: PROPOSED EFF DATE (MM/DD/YYYY)",
+      "format_notes": "Proposed policy effective date."
+    },
+    {
+      "header": "Expiration_Date",
+      "type": "date",
+      "required": true,
+      "pdf_field_example": "ACORD 125: PROPOSED EXP DATE (MM/DD/YYYY)",
+      "format_notes": "Proposed policy expiration date."
+    },
+    {
+      "header": "Agency_Name",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "ACORD 125/126/140 Header: AGENCY",
+      "format_notes": "Producing agency name (commonly locked across batch)."
+    },
+    {
+      "header": "Account_Manager",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "ACORD 125: CONTACT NAME",
+      "format_notes": "Account manager or producer handling the commercial submission."
+    },
+    {
+      "header": "Carrier_or_MGA",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "ACORD 125/126 Header: CARRIER / COMPANY",
+      "format_notes": "Target carrier or wholesale MGA (varies per quote submission)."
+    },
+    {
+      "header": "Line_of_Business",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "ACORD 125: LINES OF BUSINESS checkboxes & summary",
+      "format_notes": "Lines requested in the submission packet (e.g., Commercial GL & Property)."
+    },
+    {
+      "header": "Premises_Address",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "ACORD 125 PREMISES INFORMATION / ACORD 140 Location",
+      "format_notes": "Full street, building/suite, city, state, and ZIP from the Statement of Values (SOV)."
+    },
+    {
+      "header": "GL_Class_Code",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "ACORD 126 SCHEDULE OF HAZARDS: CLASS CODE & CLASSIFICATION",
+      "format_notes": "ISO 5-digit GL class code and description."
+    },
+    {
+      "header": "GL_Exposure_Basis",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "ACORD 126 SCHEDULE OF HAZARDS: PREMIUM BASIS & EXPOSURE",
+      "format_notes": "Rating basis (Gross Sales, Payroll, Area sq ft, or Units)."
+    },
+    {
+      "header": "Each_Occurrence_Limit",
+      "type": "currency",
+      "required": true,
+      "pdf_field_example": "ACORD 126 LIMITS: EACH OCCURRENCE",
+      "format_notes": "Requested CGL per-occurrence limit."
+    },
+    {
+      "header": "General_Aggregate_Limit",
+      "type": "currency",
+      "required": true,
+      "pdf_field_example": "ACORD 126 LIMITS: GENERAL AGGREGATE",
+      "format_notes": "Requested CGL general aggregate limit."
+    },
+    {
+      "header": "Building_Limit",
+      "type": "currency",
+      "required": false,
+      "pdf_field_example": "ACORD 140 SUBJECT OF INSURANCE: BUILDING",
+      "format_notes": "Commercial property Building coverage limit from SOV."
+    },
+    {
+      "header": "BPP_Limit",
+      "type": "currency",
+      "required": false,
+      "pdf_field_example": "ACORD 140 SUBJECT OF INSURANCE: BPP",
+      "format_notes": "Business Personal Property (BPP) limit from SOV."
+    }
+  ]
+}

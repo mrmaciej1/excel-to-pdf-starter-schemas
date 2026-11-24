@@ -1,0 +1,162 @@
+{
+  "form_id": "tx-130-u-title-transfer",
+  "official_title": "TxDMV Form 130-U: Application for Texas Title and/or Registration",
+  "issuer": "Texas Department of Motor Vehicles (TxDMV)",
+  "official_pdf_url": "https://www.txdmv.gov/sites/default/files/form_files/Form-130-U.pdf",
+  "pdf_architecture": {
+    "verdict": "acroform",
+    "pages": 2,
+    "terminal_fields": 106,
+    "text_fields": 55,
+    "checkboxes": 48,
+    "signatures": 3,
+    "xfa": false,
+    "encrypted": true,
+    "modify_denied": true,
+    "annotate_denied": true,
+    "named_fields_share": 0.962,
+    "producer": "Adobe PDF Library 19.12.68"
+  },
+  "columns": [
+    {
+      "header": "vin",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "1 Vehicle Identification Number",
+      "format_notes": "17-character VIN (strictly synthetic 1TEST00000A00000x in examples). Keep in one column; merge comb boxes when using flat/older revisions."
+    },
+    {
+      "header": "year",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "2 Year",
+      "format_notes": "4-digit vehicle model year."
+    },
+    {
+      "header": "make",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "3 Make",
+      "format_notes": "Vehicle manufacturer make (uppercase standard for TxDMV)."
+    },
+    {
+      "header": "body_style",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "4 Body Style",
+      "format_notes": "Standard TxDMV 2-character body style code (e.g., PK, 4D, LL, UT, VN)."
+    },
+    {
+      "header": "model",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "5 Model",
+      "format_notes": "Vehicle model designation."
+    },
+    {
+      "header": "major_color",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "6 Major Color",
+      "format_notes": "Primary exterior color."
+    },
+    {
+      "header": "odometer_reading",
+      "type": "integer",
+      "required": true,
+      "pdf_field_example": "9 Odometer Reading no tenths",
+      "format_notes": "Whole miles only—do not include tenths of a mile."
+    },
+    {
+      "header": "empty_weight_lbs",
+      "type": "integer",
+      "required": false,
+      "pdf_field_example": "11 Empty Weight",
+      "format_notes": "Curb/empty weight in pounds (required for commercial vehicles and trailers)."
+    },
+    {
+      "header": "applicant_name",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "16 Applicant First Name or Entity Name Middle Name Last Name Suffix if any",
+      "format_notes": "Buyer individual legal name or business entity name."
+    },
+    {
+      "header": "applicant_address",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "18 Applicant Mailing Address City State Zip",
+      "format_notes": "Street address (concatenate with city, state, ZIP for Box 18)."
+    },
+    {
+      "header": "applicant_city",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "18 Applicant Mailing Address City State Zip",
+      "format_notes": "Applicant mailing city."
+    },
+    {
+      "header": "applicant_state",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "18 Applicant Mailing Address City State Zip",
+      "format_notes": "2-letter state abbreviation."
+    },
+    {
+      "header": "applicant_zip",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "18 Applicant Mailing Address City State Zip",
+      "format_notes": "5-digit ZIP code (keep as Text)."
+    },
+    {
+      "header": "county_of_residence",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "19 Applicant County of Residence",
+      "format_notes": "Texas county name (e.g., TRAVIS, HARRIS, DALLAS)."
+    },
+    {
+      "header": "previous_owner_name",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "20 Previous Owner Name or Entity Name City State",
+      "format_notes": "Selling dealership or prior titled owner name."
+    },
+    {
+      "header": "dealer_gdn",
+      "type": "string",
+      "required": false,
+      "pdf_field_example": "21 Dealer GDN (if applicable)",
+      "format_notes": "Texas General Distinguishing Number (synthetic P000001 in examples)."
+    },
+    {
+      "header": "sales_price",
+      "type": "currency",
+      "required": true,
+      "pdf_field_example": "38 Sales Price (Motor Vehicle Tax Statement)",
+      "format_notes": "Gross vehicle sales price."
+    },
+    {
+      "header": "trade_in_allowance",
+      "type": "currency",
+      "required": false,
+      "pdf_field_example": "38 Less Trade-In Allowance",
+      "format_notes": "Trade-in credit deducted from taxable sales price ($0.00 if none)."
+    },
+    {
+      "header": "lienholder_name",
+      "type": "string",
+      "required": false,
+      "pdf_field_example": "34 First Lienholder Name if any Mailing Address City State Zip",
+      "format_notes": "First lienholder institution name (or NONE for cash sales)."
+    },
+    {
+      "header": "first_lien_date",
+      "type": "date",
+      "required": false,
+      "pdf_field_example": "33 First Lien Date if any",
+      "format_notes": "Lien creation date MM/DD/YYYY (leave blank when lienholder_name is NONE)."
+    }
+  ]
+}

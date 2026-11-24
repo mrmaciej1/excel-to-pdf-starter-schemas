@@ -1,0 +1,131 @@
+{
+  "form_id": "direct-deposit-authorization",
+  "official_title": "Employee Direct Deposit Authorization (ACH Payroll Enrollment / Federal SF-1199A Compatible)",
+  "issuer": "Employer HR / Payroll (and U.S. Treasury SF-1199A reference)",
+  "pdf_architecture": {
+    "verdict": "varies_by_employer_or_sf1199a",
+    "pages": 1,
+    "notes": "Company payroll direct deposit forms are frequently flat Word-exported PDFs; Federal Form SF-1199A (Rev. Oct 2024) is an XFA hybrid with 210 fields and split comb boxes (acct1[0]..acct17[0])."
+  },
+  "columns": [
+    {
+      "header": "employee_id",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "Employee ID / Payroll File #",
+      "format_notes": "HRIS or payroll roster ID (used for output PDF filenames)."
+    },
+    {
+      "header": "employee_first_name",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "Employee Name (First) / SF-1199A payname[0]",
+      "format_notes": "Employee legal first name."
+    },
+    {
+      "header": "employee_last_name",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "Employee Name (Last) / SF-1199A payname[0]",
+      "format_notes": "Employee legal last name."
+    },
+    {
+      "header": "employee_email",
+      "type": "email",
+      "required": true,
+      "pdf_field_example": "Employee Email (for HR e-sign delivery)",
+      "format_notes": "Work or onboarding email (strictly @example.com in sample rows)."
+    },
+    {
+      "header": "employer_name",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "Company / Employer Name",
+      "format_notes": "Constant across an employer's onboarding cohort."
+    },
+    {
+      "header": "action_type",
+      "type": "enum",
+      "required": true,
+      "pdf_field_example": "Action checkboxes (New / Change / Cancel)",
+      "format_notes": "One of: New Enrollment, Change Account, Add Secondary Split, Cancel."
+    },
+    {
+      "header": "primary_bank_name",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "Financial Institution Name (Account 1)",
+      "format_notes": "Name of primary depository bank or credit union."
+    },
+    {
+      "header": "primary_routing_number",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "9-Digit ABA Routing Transit Number",
+      "format_notes": "Strictly 9-digit text string—never numeric, because East Coast Fed districts (01-09) start with 0. Synthetic 00000000x in examples."
+    },
+    {
+      "header": "primary_account_number",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "Account Number (or SF-1199A comb boxes acct1[0]..acct17[0])",
+      "format_notes": "Keep as Text to preserve leading zeros and prevent >15-digit Excel precision truncation. Synthetic 00012345678x in examples."
+    },
+    {
+      "header": "primary_account_type",
+      "type": "enum",
+      "required": true,
+      "pdf_field_example": "Checking / Savings checkbox (SF-1199A xcheck[0] / xsvgs[0])",
+      "format_notes": "Checking or Savings."
+    },
+    {
+      "header": "primary_deposit_allocation",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "Deposit Amount / Percentage (Account 1)",
+      "format_notes": "100%, Remainder, or specific dollar amount / percentage."
+    },
+    {
+      "header": "secondary_bank_name",
+      "type": "string",
+      "required": false,
+      "pdf_field_example": "Financial Institution Name (Account 2)",
+      "format_notes": "Optional second bank for split direct deposit."
+    },
+    {
+      "header": "secondary_routing_number",
+      "type": "string",
+      "required": false,
+      "pdf_field_example": "9-Digit ABA Routing Number (Account 2)",
+      "format_notes": "Keep as 9-digit Text string when populated."
+    },
+    {
+      "header": "secondary_account_number",
+      "type": "string",
+      "required": false,
+      "pdf_field_example": "Account Number (Account 2)",
+      "format_notes": "Keep as Text when populated."
+    },
+    {
+      "header": "secondary_account_type",
+      "type": "enum",
+      "required": false,
+      "pdf_field_example": "Checking / Savings checkbox (Account 2)",
+      "format_notes": "Checking or Savings (blank if single-account deposit)."
+    },
+    {
+      "header": "secondary_deposit_amount",
+      "type": "currency",
+      "required": false,
+      "pdf_field_example": "Fixed Dollar Amount or % (Account 2)",
+      "format_notes": "Fixed split dollar amount (e.g., $250.00) or blank."
+    },
+    {
+      "header": "effective_date",
+      "type": "date",
+      "required": true,
+      "pdf_field_example": "Effective Pay Period / Date",
+      "format_notes": "Target payroll effective date MM/DD/YYYY."
+    }
+  ]
+}

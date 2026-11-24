@@ -1,0 +1,118 @@
+{
+  "form_id": "tx-01-339-resale-certificate",
+  "official_title": "Texas Sales and Use Tax Resale Certificate (Texas Comptroller Form 01-339, Front)",
+  "issuer": "Texas Comptroller of Public Accounts",
+  "official_pdf_url": "https://comptroller.texas.gov/forms/01-339.pdf",
+  "pdf_architecture": {
+    "verdict": "acroform",
+    "pages": 2,
+    "notes": "2-page PDF: Page 1 is the Resale Certificate (01-339 front); Page 2 is the Exemption Certificate (01-339 back). Keep 11-digit Texas Taxpayer Numbers as Text to avoid Excel scientific notation."
+  },
+  "columns": [
+    {
+      "header": "purchaser_name",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "Page 1: Name of purchaser, firm or agency as shown on permit",
+      "format_notes": "Exact legal name registered on the Texas Sales and Use Tax Permit."
+    },
+    {
+      "header": "purchaser_phone",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "Page 1: Phone (Area code and number)",
+      "format_notes": "Purchaser daytime phone (fictional 555-01xx in examples)."
+    },
+    {
+      "header": "purchaser_street_address",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "Page 1: Address (Street & number, P.O. Box or Route number)",
+      "format_notes": "Purchaser street address."
+    },
+    {
+      "header": "purchaser_city_state_zip",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "Page 1: City, State, ZIP code",
+      "format_notes": "Purchaser city, state, and ZIP (preserve leading zeros)."
+    },
+    {
+      "header": "texas_taxpayer_number",
+      "type": "string",
+      "required": false,
+      "pdf_field_example": "Page 1: Texas Sales and Use Tax Permit Number (11 digits)",
+      "format_notes": "11-digit Texas Taxpayer Number (strictly synthetic 3000000000x in examples). Must be Text formatted or Excel converts it to 3.00E+10."
+    },
+    {
+      "header": "out_of_state_registration_number",
+      "type": "string",
+      "required": false,
+      "pdf_field_example": "Page 1: Out-of-state retailer registration number",
+      "format_notes": "Used only by out-of-state retailers without a Texas permit."
+    },
+    {
+      "header": "out_of_state_jurisdiction",
+      "type": "string",
+      "required": false,
+      "pdf_field_example": "Page 1: Out-of-state jurisdiction / state",
+      "format_notes": "Home state/country of the out-of-state retailer."
+    },
+    {
+      "header": "seller_name",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "Page 1: Seller",
+      "format_notes": "Wholesale vendor/distributor name (typically constant across a distributor's onboarding batch)."
+    },
+    {
+      "header": "seller_street_address",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "Page 1: Street address (Seller)",
+      "format_notes": "Seller street address."
+    },
+    {
+      "header": "seller_city_state_zip",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "Page 1: City, State, ZIP code (Seller)",
+      "format_notes": "Seller city, state, and ZIP."
+    },
+    {
+      "header": "items_to_be_purchased_description",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "Page 1: Description of items to be purchased on the attached order or invoice",
+      "format_notes": "Specific description of tangible goods or taxable services purchased for resale."
+    },
+    {
+      "header": "purchaser_business_activity_description",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "Page 1: Description of the type of business activity generally engaged in or type of items normally sold by the purchaser",
+      "format_notes": "General description of what the purchaser sells, leases, or rents in the regular course of business."
+    },
+    {
+      "header": "authorized_signer_name",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "Page 1: Sign here / Printed Name",
+      "format_notes": "Authorized officer, owner, or buyer signing the certificate."
+    },
+    {
+      "header": "authorized_signer_title",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "Page 1: Title",
+      "format_notes": "Signer's business title."
+    },
+    {
+      "header": "certificate_date",
+      "type": "date",
+      "required": true,
+      "pdf_field_example": "Page 1: Date",
+      "format_notes": "Execution date MM/DD/YYYY."
+    }
+  ]
+}

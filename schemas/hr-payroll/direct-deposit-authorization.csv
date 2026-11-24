@@ -1,0 +1,6 @@
+employee_id,employee_first_name,employee_last_name,employee_email,employer_name,action_type,primary_bank_name,primary_routing_number,primary_account_number,primary_account_type,primary_deposit_allocation,secondary_bank_name,secondary_routing_number,secondary_account_number,secondary_account_type,secondary_deposit_amount,effective_date
+EMP-1001,Jane,Doe,jane.doe@example.com,Acme Plumbing LLC,New Enrollment,Example First National Bank,000000001,000123456781,Checking,100%,,,,,,01/15/2027
+EMP-1002,John,Smith,john.smith@example.com,Acme Plumbing LLC,New Enrollment,Example Harbor Credit Union,000000002,000123456782,Checking,Remainder,Example Savings Bank,000000009,000987654321,Savings,$250.00,01/15/2027
+EMP-1003,Priya,Patel,priya.patel@example.com,Acme Plumbing LLC,Change Account,Example Metro Bank,000000003,000123456783,Checking,100%,,,,,,02/01/2027
+EMP-1004,David,Morales,david.morales@example.com,Acme Plumbing LLC,Add Secondary Split,Example First National Bank,000000004,000123456784,Checking,Remainder,Example Reserve CU,000000009,000987654322,Savings,$400.00,02/01/2027
+EMP-1005,Hannah,Brooks,hannah.brooks@example.com,Acme Plumbing LLC,New Enrollment,Example Atlantic Bank,000000005,000123456785,Savings,100%,,,,,,02/15/2027

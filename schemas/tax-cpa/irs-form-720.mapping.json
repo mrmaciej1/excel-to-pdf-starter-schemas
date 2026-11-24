@@ -1,0 +1,154 @@
+{
+  "form_id": "irs-form-720",
+  "official_title": "Form 720: Quarterly Federal Excise Tax Return (including Q2 PCORI Fee IRS No. 133)",
+  "issuer": "Internal Revenue Service (IRS)",
+  "official_pdf_url": "https://www.irs.gov/pub/irs-pdf/f720.pdf",
+  "pdf_architecture": {
+    "verdict": "xfa_hybrid",
+    "pages": 6,
+    "named_fields_share": 0.0,
+    "producer": "Adobe LiveCycle Designer"
+  },
+  "columns": [
+    {
+      "header": "Taxpayer_Name",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "Page1 Header: Name (f1_xx[0])",
+      "format_notes": "Legal entity name of employer/plan sponsor or excise taxpayer."
+    },
+    {
+      "header": "Trade_Name_DBA",
+      "type": "string",
+      "required": false,
+      "pdf_field_example": "Page1 Header: Trade Name",
+      "format_notes": "Optional DBA or trade name if different from legal name."
+    },
+    {
+      "header": "EIN",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "Page1 Header: Employer Identification Number",
+      "format_notes": "9-digit EIN formatted XX-XXXXXXX (synthetic 12-3456789 / 00-123456x in examples)."
+    },
+    {
+      "header": "Street_Address",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "Page1 Header: Number, Street, and Room or Suite No.",
+      "format_notes": "Taxpayer mailing street address."
+    },
+    {
+      "header": "City_State_ZIP",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "Page1 Header: City or Town, State, and ZIP Code",
+      "format_notes": "Preserve leading-zero ZIP codes (e.g., 07102) as text."
+    },
+    {
+      "header": "Quarter_Ending",
+      "type": "date",
+      "required": true,
+      "pdf_field_example": "Page1 Header: Quarter Ending",
+      "format_notes": "Quarter end date MM/DD/YYYY (06/30/YYYY for annual Q2 PCORI fee due July 31)."
+    },
+    {
+      "header": "Final_Return_Checkbox",
+      "type": "boolean_flag",
+      "required": false,
+      "pdf_field_example": "Page1 Header: Final Return Checkbox",
+      "format_notes": "Yes/No indicator if this is a final Form 720 filing."
+    },
+    {
+      "header": "Address_Change_Checkbox",
+      "type": "boolean_flag",
+      "required": false,
+      "pdf_field_example": "Page1 Header: Address Change Checkbox",
+      "format_notes": "Yes/No indicator if taxpayer address changed since last filing."
+    },
+    {
+      "header": "IRS_No",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "Part I / Part II Line Router (e.g., IRS No. 133 on Page 2)",
+      "format_notes": "IRS excise line number (e.g., 133 for PCORI self-insured health plans, 22 for communications)."
+    },
+    {
+      "header": "Excise_Tax_Category",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "helper_column",
+      "format_notes": "Human-readable description used for CPA review and batch routing."
+    },
+    {
+      "header": "Avg_Covered_Lives_or_Units",
+      "type": "number",
+      "required": true,
+      "pdf_field_example": "Part II IRS No. 133 Column (a) Avg. number of lives covered",
+      "format_notes": "Average covered lives for PCORI (IRS No. 133) or taxable units/gallons for Part I excise lines."
+    },
+    {
+      "header": "Applicable_Rate",
+      "type": "number",
+      "required": true,
+      "pdf_field_example": "Part II IRS No. 133 Column (b) Rate",
+      "format_notes": "Tax rate per covered life/unit. Always verify current-year IRS PCORI / excise rates from official Form 720 instructions."
+    },
+    {
+      "header": "Part_I_Total_Tax",
+      "type": "currency",
+      "required": true,
+      "pdf_field_example": "Part I Line 1 Total",
+      "format_notes": "Total tax from Part I (0.00 for PCORI-only Q2 returns)."
+    },
+    {
+      "header": "Part_II_Total_Tax",
+      "type": "currency",
+      "required": true,
+      "pdf_field_example": "Part II Line 2 Total",
+      "format_notes": "Total tax from Part II (equals Avg_Covered_Lives * Applicable_Rate for PCORI-only returns)."
+    },
+    {
+      "header": "Part_III_Line_3_Total_Tax",
+      "type": "currency",
+      "required": true,
+      "pdf_field_example": "Part III Line 3 Total Tax",
+      "format_notes": "Sum of Part I Line 1 and Part II Line 2."
+    },
+    {
+      "header": "Schedule_C_Claims_Line_4",
+      "type": "currency",
+      "required": false,
+      "pdf_field_example": "Part III Line 4 Claims (Schedule C)",
+      "format_notes": "Allowable Schedule C claims (typically 0.00 for PCORI)."
+    },
+    {
+      "header": "Deposits_Line_6",
+      "type": "currency",
+      "required": false,
+      "pdf_field_example": "Part III Line 6 Deposits",
+      "format_notes": "Excise tax deposits made for the quarter."
+    },
+    {
+      "header": "Balance_Due_Line_10",
+      "type": "currency",
+      "required": true,
+      "pdf_field_example": "Part III Line 10 Balance Due",
+      "format_notes": "Net balance due carried to Form 720-V payment voucher if applicable."
+    },
+    {
+      "header": "Third_Party_Designee_Name",
+      "type": "string",
+      "required": false,
+      "pdf_field_example": "Part III Third Party Designee",
+      "format_notes": "Optional designee name (commonly fixed to CPA/benefits partner across batch)."
+    },
+    {
+      "header": "Paid_Preparer_PTIN",
+      "type": "string",
+      "required": false,
+      "pdf_field_example": "Paid Preparer Use Only: PTIN",
+      "format_notes": "Preparer Tax Identification Number (synthetic P00000001 in examples)."
+    }
+  ]
+}

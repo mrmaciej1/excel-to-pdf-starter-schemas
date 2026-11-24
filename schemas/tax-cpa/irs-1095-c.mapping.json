@@ -1,0 +1,134 @@
+{
+  "form_id": "irs-1095-c",
+  "official_title": "Form 1095-C: Employer-Provided Health Insurance Offer and Coverage",
+  "issuer": "Internal Revenue Service (IRS)",
+  "official_pdf_url": "https://www.irs.gov/pub/irs-pdf/f1095c.pdf",
+  "pdf_architecture": {
+    "verdict": "xfa_hybrid",
+    "pages": 4,
+    "terminal_fields": 306,
+    "named_fields_share": 0.0,
+    "producer": "Adobe LiveCycle Designer"
+  },
+  "columns": [
+    {
+      "header": "Employee_First_Name",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "topmostSubform[0].Page1[0].EmployeeName[0].f1_1[0]",
+      "format_notes": "Part I Line 1 employee first name."
+    },
+    {
+      "header": "Employee_Middle_Initial",
+      "type": "string",
+      "required": false,
+      "pdf_field_example": "topmostSubform[0].Page1[0].EmployeeName[0].f1_2[0]",
+      "format_notes": "Part I Line 1 employee middle initial."
+    },
+    {
+      "header": "Employee_Last_Name",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "topmostSubform[0].Page1[0].EmployeeName[0].f1_3[0]",
+      "format_notes": "Part I Line 1 employee last name."
+    },
+    {
+      "header": "Employee_SSN",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "topmostSubform[0].Page1[0].EmployeeName[0].f1_4[0]",
+      "format_notes": "Part I Line 2 SSN (or IRS-permitted truncated TTIN ***-**-0001 on employee furnishing copies). Synthetic 000-00-000x in examples."
+    },
+    {
+      "header": "Street_Address",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "topmostSubform[0].Page1[0].EmployeeName[0].f1_5[0]",
+      "format_notes": "Part I Line 3 employee street address."
+    },
+    {
+      "header": "City",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "topmostSubform[0].Page1[0].EmployeeName[0].f1_6[0]",
+      "format_notes": "Part I Line 4 city or town."
+    },
+    {
+      "header": "State",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "topmostSubform[0].Page1[0].EmployeeName[0].f1_7[0]",
+      "format_notes": "Part I Line 5 2-letter state or province code."
+    },
+    {
+      "header": "ZIP",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "topmostSubform[0].Page1[0].EmployeeName[0].f1_8[0]",
+      "format_notes": "Part I Line 6 ZIP or foreign postal code; keep as Text to preserve leading zeros (02110, 07102)."
+    },
+    {
+      "header": "Employer_Name",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "topmostSubform[0].Page1[0].EmployerIssuer[0].f1_9[0]",
+      "format_notes": "Part I Line 7 Applicable Large Employer (ALE) Member name."
+    },
+    {
+      "header": "Employer_EIN",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "topmostSubform[0].Page1[0].EmployerIssuer[0].f1_10[0]",
+      "format_notes": "Part I Line 8 ALE Member EIN (XX-XXXXXXX)."
+    },
+    {
+      "header": "Employer_Contact_Phone",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "topmostSubform[0].Page1[0].EmployerIssuer[0].f1_12[0]",
+      "format_notes": "Part I Line 10 ALE Member contact telephone number."
+    },
+    {
+      "header": "Employer_Street_Address",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "topmostSubform[0].Page1[0].EmployerIssuer[0].f1_11[0]",
+      "format_notes": "Part I Line 9 ALE Member street address."
+    },
+    {
+      "header": "Employer_City_State_ZIP",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "topmostSubform[0].Page1[0].EmployerIssuer[0].f1_13[0]..f1_15[0]",
+      "format_notes": "Part I Lines 11-13 ALE Member city, state, and ZIP (split into f1_13, f1_14, f1_15 in native AcroForm scripts)."
+    },
+    {
+      "header": "Plan_Start_Month",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "topmostSubform[0].Page1[0].PartII[0].f1_17[0]",
+      "format_notes": "2-digit month code ('00' through '12')—must remain text so '01' does not collapse to '1'."
+    },
+    {
+      "header": "Line14_All_12_Months",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "topmostSubform[0].Page1[0].Table1[0].Row1[0].f1_18[0]",
+      "format_notes": "Part II Line 14 Offer of Coverage code (1A-1U) for All 12 Months column. For mid-year changes, populate Jan-Dec fields f1_19[0]..f1_30[0] instead."
+    },
+    {
+      "header": "Line15_All_12_Months",
+      "type": "currency",
+      "required": false,
+      "pdf_field_example": "topmostSubform[0].Page1[0].Table1[0].Row2[0].f1_31[0]",
+      "format_notes": "Part II Line 15 Employee Required Contribution (lowest-cost self-only monthly premium) for All 12 Months. Jan-Dec fields are f1_32[0]..f1_43[0]."
+    },
+    {
+      "header": "Line16_All_12_Months",
+      "type": "string",
+      "required": false,
+      "pdf_field_example": "topmostSubform[0].Page1[0].Table1[0].Row3[0].f1_44[0]",
+      "format_notes": "Part II Line 16 Section 4980H Safe Harbor and Other Relief code (2A-2I) for All 12 Months. Jan-Dec fields are f1_45[0]..f1_56[0]."
+    }
+  ]
+}

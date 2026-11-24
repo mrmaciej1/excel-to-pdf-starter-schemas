@@ -1,0 +1,122 @@
+{
+  "form_id": "irs-w9",
+  "official_title": "Form W-9: Request for Taxpayer Identification Number and Certification (Rev. March 2024)",
+  "issuer": "Internal Revenue Service (IRS)",
+  "official_pdf_url": "https://www.irs.gov/pub/irs-pdf/fw9.pdf",
+  "pdf_architecture": {
+    "verdict": "xfa_hybrid",
+    "pages": 6,
+    "terminal_fields": 23,
+    "text_fields": 15,
+    "checkboxes": 8,
+    "named_fields_share": 0.0,
+    "producer": "Designer 6.5"
+  },
+  "columns": [
+    {
+      "header": "Legal_Name",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "topmostSubform[0].Page1[0].f1_01[0]",
+      "format_notes": "Line 1 entity or individual legal name exactly as shown on federal tax return."
+    },
+    {
+      "header": "Business_DBA_Name",
+      "type": "string",
+      "required": false,
+      "pdf_field_example": "topmostSubform[0].Page1[0].f1_02[0]",
+      "format_notes": "Line 2 business name, trade name, or disregarded entity name if different from Line 1."
+    },
+    {
+      "header": "Tax_Classification",
+      "type": "enum",
+      "required": true,
+      "pdf_field_example": "topmostSubform[0].Page1[0].Boxes3a-b_ReadOrder[0].c1_1[0..6]",
+      "format_notes": "Maps to checkboxes c1_1[0..6] with PDF export values /1 (Individual/sole proprietor), /2 (C Corp), /3 (S Corp), /4 (Partnership), /5 (Trust/estate), /6 (LLC), /7 (Other)."
+    },
+    {
+      "header": "LLC_Tax_Code",
+      "type": "enum",
+      "required": false,
+      "pdf_field_example": "topmostSubform[0].Page1[0].Boxes3a-b_ReadOrder[0].f1_03[0]",
+      "format_notes": "Required when Tax_Classification is LLC: single letter C, S, or P."
+    },
+    {
+      "header": "Foreign_Partners_Line_3b",
+      "type": "boolean_flag",
+      "required": false,
+      "pdf_field_example": "topmostSubform[0].Page1[0].Boxes3a-b_ReadOrder[0].c1_2[0]",
+      "format_notes": "Rev. March 2024 Line 3b checkbox (PDF export value /1 or /Off) for partnerships/trusts/LLCs taxed as partnerships with foreign partners/owners/beneficiaries."
+    },
+    {
+      "header": "Exempt_Payee_Code",
+      "type": "string",
+      "required": false,
+      "pdf_field_example": "topmostSubform[0].Page1[0].f1_05[0]",
+      "format_notes": "Line 4 numeric code (1-13) if applicable; keep as text."
+    },
+    {
+      "header": "FATCA_Exemption_Code",
+      "type": "string",
+      "required": false,
+      "pdf_field_example": "topmostSubform[0].Page1[0].f1_06[0]",
+      "format_notes": "Line 4 letter code (A-M) for FATCA reporting exemption if applicable."
+    },
+    {
+      "header": "Street_Address",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "topmostSubform[0].Page1[0].Address_ReadOrder[0].f1_07[0]",
+      "format_notes": "Line 5 number, street, and apt or suite number."
+    },
+    {
+      "header": "City_State_ZIP",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "topmostSubform[0].Page1[0].Address_ReadOrder[0].f1_08[0]",
+      "format_notes": "Line 6 city, state, and ZIP code; preserve leading-zero East Coast ZIPs (e.g., 02110, 07102) as text."
+    },
+    {
+      "header": "Requester_Name_and_Address",
+      "type": "string",
+      "required": false,
+      "pdf_field_example": "topmostSubform[0].Page1[0].f1_09[0]",
+      "format_notes": "Optional requester block; frequently kept constant across all vendor rows."
+    },
+    {
+      "header": "Account_Number",
+      "type": "string",
+      "required": false,
+      "pdf_field_example": "topmostSubform[0].Page1[0].f1_10[0]",
+      "format_notes": "Line 7 optional vendor or ERP account reference (e.g., QuickBooks vendor ID)."
+    },
+    {
+      "header": "TIN_Type",
+      "type": "enum",
+      "required": true,
+      "pdf_field_example": "helper_column",
+      "format_notes": "Helper column (EIN or SSN) telling merge scripts whether to populate f1_14/f1_15 (EIN) or f1_11/f1_12/f1_13 (SSN)."
+    },
+    {
+      "header": "EIN_Prefix",
+      "type": "string",
+      "required": false,
+      "pdf_field_example": "topmostSubform[0].Page1[0].f1_14[0]",
+      "format_notes": "First 2 digits of Employer Identification Number (text-formatted to keep leading zeros)."
+    },
+    {
+      "header": "EIN_Suffix",
+      "type": "string",
+      "required": false,
+      "pdf_field_example": "topmostSubform[0].Page1[0].f1_15[0]",
+      "format_notes": "Last 7 digits of Employer Identification Number (text-formatted to keep leading zeros)."
+    },
+    {
+      "header": "SSN_Placeholder",
+      "type": "string",
+      "required": false,
+      "pdf_field_example": "topmostSubform[0].Page1[0].f1_11[0] + f1_12[0] + f1_13[0]",
+      "format_notes": "Formatted XXX-XX-XXXX (strictly synthetic 000-00-000x in examples). Split on '-' into 3 comb boxes f1_11 (3), f1_12 (2), f1_13 (4), or leave blank for taxpayer completion."
+    }
+  ]
+}

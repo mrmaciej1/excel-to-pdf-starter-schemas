@@ -1,0 +1,129 @@
+{
+  "form_id": "irs-1099-nec",
+  "official_title": "Form 1099-NEC: Nonemployee Compensation (Copy 1, Copy B, Copy 2)",
+  "issuer": "Internal Revenue Service (IRS)",
+  "official_pdf_url": "https://www.irs.gov/pub/irs-pdf/f1099nec.pdf",
+  "pdf_architecture": {
+    "verdict": "xfa_hybrid",
+    "pages": 6,
+    "terminal_fields": 140,
+    "text_fields": 128,
+    "checkboxes": 12,
+    "named_fields_share": 0.0,
+    "producer": "Designer 6.5"
+  },
+  "columns": [
+    {
+      "header": "Tax_Year",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "topmostSubform[0].Copy1[0].PgHeader[0].CalendarYear[0].f2_1[0]",
+      "format_notes": "4-digit calendar year (or 2-digit suffix depending on PDF revision)."
+    },
+    {
+      "header": "Payer_Name_and_Address",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "topmostSubform[0].Copy1[0].LeftCol[0].f2_2[0]",
+      "format_notes": "Payer name, street address, city, state, and ZIP; typically constant across a batch."
+    },
+    {
+      "header": "Payer_Phone",
+      "type": "string",
+      "required": false,
+      "pdf_field_example": "topmostSubform[0].Copy1[0].LeftCol[0].f2_2[0]",
+      "format_notes": "Payer contact telephone number included in the payer block."
+    },
+    {
+      "header": "Payer_TIN",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "topmostSubform[0].Copy1[0].LeftCol[0].f2_10[0]",
+      "format_notes": "Payer EIN formatted XX-XXXXXXX (synthetic 12-3456789 in examples)."
+    },
+    {
+      "header": "Recipient_TIN",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "topmostSubform[0].Copy1[0].LeftCol[0].f2_11[0]",
+      "format_notes": "Full TIN for payer records or IRS-permitted truncated TIN (TTIN, e.g., ***-**-0001) on recipient Copy B."
+    },
+    {
+      "header": "Recipient_Name",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "topmostSubform[0].Copy1[0].LeftCol[0].f2_12[0]",
+      "format_notes": "Contractor or vendor legal name matching their Form W-9."
+    },
+    {
+      "header": "Recipient_Street_Address",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "topmostSubform[0].Copy1[0].LeftCol[0].f2_13[0]",
+      "format_notes": "Recipient street address (including apartment or suite)."
+    },
+    {
+      "header": "Recipient_City_State_ZIP",
+      "type": "string",
+      "required": true,
+      "pdf_field_example": "topmostSubform[0].Copy1[0].LeftCol[0].f2_16[0]",
+      "format_notes": "Recipient city, state, and ZIP code (preserve leading-zero ZIPs as text)."
+    },
+    {
+      "header": "Account_Number",
+      "type": "string",
+      "required": false,
+      "pdf_field_example": "topmostSubform[0].Copy1[0].LeftCol[0].f2_19[0]",
+      "format_notes": "Required when filing multiple 1099-NEC forms for the same recipient."
+    },
+    {
+      "header": "Box_1_Nonemployee_Compensation",
+      "type": "currency",
+      "required": true,
+      "pdf_field_example": "topmostSubform[0].Copy1[0].RightCol[0].f2_20[0]",
+      "format_notes": "Decimal string without '$' (e.g., 18450.00) because Box 1 already prints a pre-printed dollar sign."
+    },
+    {
+      "header": "Box_2_Direct_Sales_5000_Checkbox",
+      "type": "boolean_flag",
+      "required": false,
+      "pdf_field_example": "topmostSubform[0].Copy1[0].RightCol[0].c1_3[0]",
+      "format_notes": "Yes/No indicator for $5,000+ direct sales of consumer products for resale (PDF export value /1)."
+    },
+    {
+      "header": "Box_4_Federal_Income_Tax_Withheld",
+      "type": "currency",
+      "required": false,
+      "pdf_field_example": "topmostSubform[0].Copy1[0].RightCol[0].f2_25[0]",
+      "format_notes": "Federal backup withholding amount (decimal string without '$')."
+    },
+    {
+      "header": "Box_5_State_Tax_Withheld",
+      "type": "currency",
+      "required": false,
+      "pdf_field_example": "topmostSubform[0].Copy1[0].RightCol[0].Box5_ReadOrder[0].f2_27[0]",
+      "format_notes": "State income tax withheld (first state row)."
+    },
+    {
+      "header": "Box_6_State_Payer_State_No",
+      "type": "string",
+      "required": false,
+      "pdf_field_example": "topmostSubform[0].Copy1[0].RightCol[0].Box6_ReadOrder[0].f2_29[0]",
+      "format_notes": "2-letter state abbreviation and payer's state tax ID."
+    },
+    {
+      "header": "Box_7_State_Income",
+      "type": "currency",
+      "required": false,
+      "pdf_field_example": "topmostSubform[0].Copy1[0].RightCol[0].f2_31[0]",
+      "format_notes": "State-reportable nonemployee compensation."
+    },
+    {
+      "header": "Corrected_Return",
+      "type": "boolean_flag",
+      "required": false,
+      "pdf_field_example": "topmostSubform[0].Copy1[0].PgHeader[0].c2_1[1]",
+      "format_notes": "Yes/No indicator for the CORRECTED checkbox at top of Copy B/1/2."
+    }
+  ]
+}

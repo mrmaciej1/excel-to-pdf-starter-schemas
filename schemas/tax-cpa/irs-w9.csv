@@ -1,0 +1,6 @@
+Legal_Name,Business_DBA_Name,Tax_Classification,LLC_Tax_Code,Foreign_Partners_Line_3b,Exempt_Payee_Code,FATCA_Exemption_Code,Street_Address,City_State_ZIP,Requester_Name_and_Address,Account_Number,TIN_Type,EIN_Prefix,EIN_Suffix,SSN_Placeholder
+Acme Plumbing LLC,Acme Mechanical Services,LLC,S,Off,,,100 Main St Ste 200,"Austin, TX 78701","Northstar Holdings AP, Austin TX",QB-VEND-1001,EIN,12,3456789,
+Jane Doe,Jane Doe Advisory Studio,Individual/sole proprietor,,Off,,,250 Harbor Way Apt 4B,"Boston, MA 02110","Northstar Holdings AP, Austin TX",QB-VEND-1002,SSN,,,000-00-0001
+Northwind Industrial Supply LLC,Northwind Supply,LLC,C,Off,,,742 Evergreen Terrace Ste 100,"Columbus, OH 43215","Northstar Holdings AP, Austin TX",QB-VEND-1003,EIN,00,1234563,
+Contoso Freight Systems Corp,Contoso Freight,C Corporation,,Off,5,,880 Industrial Pkwy,"Newark, NJ 07102","Northstar Holdings AP, Austin TX",QB-VEND-1004,EIN,00,1234564,
+Fabrikam Mechanical Partners LP,,Partnership,,Yes,,,1200 Peachtree St NE,"Atlanta, GA 30309","Northstar Holdings AP, Austin TX",QB-VEND-1005,EIN,00,1234565,
